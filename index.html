@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One Piece Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" href="icon-192.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+</head>
+
+<body>
+    <div class="glass-background"></div>
+    <div class="floating-elements-container" id="floatingContainer"></div>
+
+    <div class="main-container">
+        <header class="glass-header">
+
+            <h1>Nikhil's Grand Line Tracker</h1>
+        </header>
+
+        <main>
+            <div class="glass-card status-card">
+                <h2>Current Date</h2>
+                <div class="date-display" id="currentDate">--</div>
+            </div>
+
+            <div class="glass-card tracker-card">
+                <div class="tracker-item">
+                    <label>Target Chapter</label>
+                    <div class="number-display" id="targetChapter">--</div>
+                </div>
+
+                <div class="tracker-item">
+                    <label>Current Arc</label>
+                    <div class="arc-display" id="currentArc">--</div>
+                </div>
+            </div>
+
+            <!-- Bounty Display -->
+            <div class="glass-card bounty-card">
+                <h2>Current Bounty</h2>
+                <div class="bounty-display" id="currentBounty">
+                    <span class="currency-symbol">฿</span>
+                    <span id="bountyValue">0</span>
+                </div>
+                <div class="bounty-label">DEAD OR ALIVE</div>
+            </div>
+
+            <!-- Log Pose (Next Island) -->
+            <div class="glass-card log-pose-card">
+                <div class="log-pose-icon">🧭</div>
+                <div class="log-pose-info">
+                    <h3>Next Destination</h3>
+                    <div class="next-arc-name" id="nextArcName">--</div>
+                    <div class="next-arc-time" id="nextArcTime">--</div>
+                </div>
+            </div>
+
+            <!-- Crewmate Collection -->
+            <div class="glass-card crew-card">
+                <h3>Straw Hat Crew</h3>
+                <div class="crew-container" id="crewContainer">
+                    <!-- Crew icons injected by JS -->
+                </div>
+            </div>
+
+            <div class="glass-card progress-card">
+                <h3>Voyage Progress</h3>
+                <div class="status-message" id="statusMessage">Calculating...</div>
+
+                <div class="progress-bar-container">
+                    <div class="progress-bar-fill" id="progressBar">
+                        <div class="ship-marker">⛵</div>
+                    </div>
+                </div>
+                <div class="progress-labels">
+                    <span>Start</span>
+                    <span id="finishLabel">Japan (Mar 12)</span>
+                </div>
+            </div>
+            <div class="glass-card">
+                <a href="timeline.html" class="nav-button">View Voyage Timeline 📜</a>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./sw.js');
+        }
+    </script>
+</body>
+
+</html>
