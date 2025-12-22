@@ -14,7 +14,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     min-height: 100vh;
     /* Louder, more vibrant ocean gradient */
-    background: linear-gradient(-45deg, #000428, #004e92, #0099ff, #00d2ff);
+    background: linear-gradient(-45deg, #000428, #004e92, #0099ff, #00d2fd);
     background-size: 400% 400%;
     animation: stormyOcean 12s ease infinite;
     color: var(--text-color);
