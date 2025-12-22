@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Configuration (Embedded to avoid local file fetch errors)
     const config = {
-        "startDate": "2025-12-16",
+        "startDate": "2025-12-18",
         "endDate": "2026-03-12",
         "totalChapters": 1168
     };
