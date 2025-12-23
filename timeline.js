@@ -19,12 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
         { name: "Final Saga", start: 1058, end: 9999 } // Cap at total chapters
     ];
 
-    // Configuration (Embedded to avoid local file fetch errors)
-    const config = {
-        "startDate": "2025-12-16",
-        "endDate": "2026-03-12",
-        "totalChapters": 1168
-    };
+    // Configuration is now loaded from config.js
+    // const config = { ... };
 
     renderTimeline();
 

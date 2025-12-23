@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Voyage Timeline - Nikhil's Grand Line Tracker</title>
+    <title>Voyage Calendar - Nikhil's Grand Line Tracker</title>
     <link rel="stylesheet" href="style.css">
     <link rel="manifest" href="manifest.json">
     <link rel="icon" type="image/png" href="icon-192.png">
@@ -12,41 +12,31 @@
 
 <body>
     <div class="glass-background"></div>
-    <!-- Floating elements container for consistency -->
     <div class="floating-elements-container" id="floatingContainer"></div>
 
-    <div class="main-container">
+    <div class="main-container" style="max-width: 800px;">
         <header class="glass-header">
             <a href="index.html" class="back-link">⬅️ Back to Deck</a>
-            <h1>Voyage Timeline</h1>
+            <h1>Voyage Calendar</h1>
         </header>
 
         <main>
             <div class="glass-card">
-                <p class="status-message">Your calculated arrival dates for each Saga.</p>
-                <div class="timeline-header">
-                    <span>Saga</span>
-                    <span style="text-align: center;">Chapter</span>
-                    <span style="text-align: right;">Date</span>
-                </div>
-                <ul id="timelineList" class="timeline-list">
+                <p class="status-message">Daily cumulative chapter goals to stay on track.</p>
+                <div id="calendarContainer">
                     <!-- Javascript will populate this -->
-                    <li class="timeline-item">
-                        <span class="arc-name">Loading Chart...</span>
-                        <span class="arc-chapter"></span>
-                        <span class="arc-date"></span>
-                    </li>
-                </ul>
+                    <p>Loading Calendar...</p>
+                </div>
             </div>
         </main>
     </div>
 
     <script src="config.js"></script>
-    <script src="timeline.js"></script>
+    <script src="calendar.js"></script>
     <script>
         // Simple floating elements for this page too
         const container = document.getElementById('floatingContainer');
-        const icons = ['☠️', '🍖', '🍊', '⚔️', '👒', '⚓', '🌊'];
+        const icons = ['📅', '⏳', '⭐', '🌊', '⚓', '🏴‍☠️'];
         for (let i = 0; i < 15; i++) {
             const el = document.createElement('div');
             el.classList.add('floating-item');

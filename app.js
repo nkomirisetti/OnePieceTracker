@@ -47,12 +47,8 @@ document.addEventListener('DOMContentLoaded', () => {
         { chapter: 0, value: "0" }
     ];
 
-    // Configuration (Embedded to avoid local file fetch errors)
-    const config = {
-        "startDate": "2025-12-18",
-        "endDate": "2026-03-12",
-        "totalChapters": 1168
-    };
+    // Configuration is now loaded from config.js
+    // const config = { ... };
 
     // Initialize App
     initApp();
