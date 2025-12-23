@@ -24,9 +24,18 @@
         <main>
             <div class="glass-card">
                 <p class="status-message">Your calculated arrival dates for each Saga.</p>
+                <div class="timeline-header">
+                    <span>Saga</span>
+                    <span style="text-align: center;">Chapter</span>
+                    <span style="text-align: right;">Date</span>
+                </div>
                 <ul id="timelineList" class="timeline-list">
                     <!-- Javascript will populate this -->
-                    <li>Loading Chart...</li>
+                    <li class="timeline-item">
+                        <span class="arc-name">Loading Chart...</span>
+                        <span class="arc-chapter"></span>
+                        <span class="arc-date"></span>
+                    </li>
                 </ul>
             </div>
         </main>

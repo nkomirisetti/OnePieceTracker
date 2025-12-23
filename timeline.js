@@ -66,6 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             li.innerHTML = `
                 <span class="arc-name">${arc.name}</span>
+                <span class="arc-chapter">Ch. ${targetChapter}</span>
                 <span class="arc-date">${dateStr}</span>
             `;
 
