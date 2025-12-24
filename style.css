@@ -545,4 +545,30 @@ h1 {
 }
 
 
-/* Mobile Adjustments (Removed per user request) */
+/* Mobile Adjustments */
+@media (max-width: 600px) {
+    .calendar-grid {
+        /* Switch to a flexible grid that fits the screen width */
+        grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+        gap: 6px;
+    }
+
+    .calendar-month {
+        /* Remove horizontal scroll */
+        overflow-x: visible;
+        padding-bottom: 0;
+    }
+
+    .calendar-day {
+        min-height: 50px;
+        padding: 4px;
+    }
+
+    .day-number {
+        font-size: 0.7rem;
+    }
+
+    .day-chapter {
+        font-size: 0.8rem;
+    }
+}
