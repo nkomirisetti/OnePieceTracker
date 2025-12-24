@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const currentArcEl = document.getElementById('currentArc'); // New Element
     const statusMessageEl = document.getElementById('statusMessage');
     const progressBarEl = document.getElementById('progressBar');
+    const progressPercentEl = document.getElementById('progressPercent');
 
     // One Piece Arcs Data
     const arcs = [
@@ -138,6 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const totalParams = config.totalChapters;
         const percent = Math.min(100, Math.max(0, (target / totalParams) * 100));
         progressBarEl.style.width = `${percent}%`;
+        progressPercentEl.textContent = `${percent.toFixed(1)}%`;
 
         // Update Arc Display
         currentArcEl.textContent = getArc(target);

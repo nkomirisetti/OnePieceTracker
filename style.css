@@ -262,6 +262,15 @@ h1 {
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
 }
 
+.percent-display {
+    font-size: 4rem;
+    font-weight: 900;
+    color: #00ff99;
+    text-shadow: 0 0 15px rgba(0, 255, 153, 0.6);
+    margin: 10px 0;
+    line-height: 1;
+}
+
 .progress-labels {
     display: flex;
     justify-content: space-between;
@@ -548,9 +557,8 @@ h1 {
 /* Mobile Adjustments */
 @media (max-width: 600px) {
     .calendar-grid {
-        /* Switch to a flexible grid that fits the screen width */
-        grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
-        gap: 6px;
+        /* Keep 7 columns but adjust spacing */
+        gap: 4px;
     }
 
     .calendar-month {
