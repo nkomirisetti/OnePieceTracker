@@ -53,13 +53,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 gridDiv = document.createElement('div');
                 gridDiv.className = 'calendar-grid';
 
-                // Add padding for first execution of month if it doesn't start on Sunday? 
-                // Creating a simple grid 7-wide would require empty cells for alignment.
-                // For simplicity first iteration, we might just list days or do a flex wrap.
-                // Let's do a flex wrap "cards" style which is more responsive and easier than strict 7-col grid without alignment logic.
-                // If user wants strict calendar (Sun-Sat), we need day of week logic.
-                // Let's try strict calendar for "wow" factor.
+                // Add Day Headers
+                const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+                dayNames.forEach(day => {
+                    const header = document.createElement('div');
+                    header.className = 'calendar-header';
+                    header.textContent = day;
+                    gridDiv.appendChild(header);
+                });
 
+                // Add padding for first execution of month if it doesn't start on Sunday
                 const firstDayOfWeek = currentDate.getDay(); // 0 is Sunday
                 for (let i = 0; i < firstDayOfWeek; i++) {
                     const emptyCell = document.createElement('div');
