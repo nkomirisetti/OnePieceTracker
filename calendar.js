@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const cleanEnd = new Date(endDate.getFullYear(), endDate.getMonth(), endDate.getDate());
 
         const totalDuration = cleanEnd - cleanStart; // ms
-        const totalDays = Math.floor(totalDuration / (1000 * 60 * 60 * 24));
+        const totalDays = Math.floor(totalDuration / (1000 * 60 * 60 * 24)) + 1; // Inclusive of start date
         const chaptersPerDay = config.totalChapters / totalDays;
 
         let currentDate = new Date(cleanStart);
@@ -69,12 +69,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             // Calculate Target Chapter for this specific date
-            // Days passed since start (inclusive of this day?)
-            // If start is Dec 16, and today is Dec 16, daysPassed should be 0 or 1?
-            // In app.js: const daysPassed = Math.floor(diffTime / (1000 * 60 * 60 * 24)); (0-indexed)
-            // But targetChapter = (daysPassed + 1) * rate. 
-            // So Dec 16 (0 days passed) -> Target 1 * rate.
-
             const diffTime = currentDate - cleanStart;
             const daysPassed = Math.floor(diffTime / (1000 * 60 * 60 * 24));
             let target = Math.floor((daysPassed + 1) * chaptersPerDay);

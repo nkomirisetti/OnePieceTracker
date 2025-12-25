@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const totalDuration = cleanEnd - cleanStart;
 
         const daysPassed = Math.floor(diffTime / (1000 * 60 * 60 * 24)); // 0-indexed if starts today
-        const totalDays = Math.floor(totalDuration / (1000 * 60 * 60 * 24));
+        const totalDays = Math.floor(totalDuration / (1000 * 60 * 60 * 24)) + 1; // Inclusive of start date
 
         // Dynamic Goal Calculation
         // Spread total chapters over total days available
