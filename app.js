@@ -140,6 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
         for (let i = 0; i < 15; i++) {
             const el = document.createElement('div');
             el.classList.add('floating-item');
+            el.setAttribute('aria-hidden', 'true'); // Decorative only
             el.textContent = icons[Math.floor(Math.random() * icons.length)];
 
             // Randomize position and animation details

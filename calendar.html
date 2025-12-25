@@ -40,6 +40,7 @@
         for (let i = 0; i < 15; i++) {
             const el = document.createElement('div');
             el.classList.add('floating-item');
+            el.setAttribute('aria-hidden', 'true'); // Decorative only
             el.textContent = icons[Math.floor(Math.random() * icons.length)];
             el.style.left = `${Math.random() * 100}%`;
             el.style.animationDuration = `${10 + Math.random() * 20}s`;

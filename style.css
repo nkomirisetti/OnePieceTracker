@@ -589,3 +589,23 @@ h1 {
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     margin-bottom: 5px;
 }
+
+/* Accessibility: Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    *, ::before, ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .floating-item {
+        animation: none !important;
+        opacity: 0.2; /* Static, subtle background */
+    }
+
+    body {
+        animation: none !important;
+        background-position: 50% 50%;
+    }
+}
