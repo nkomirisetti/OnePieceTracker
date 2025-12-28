@@ -83,15 +83,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // 2. Update Crew
         const crewContainer = document.getElementById('crewContainer');
-        crewContainer.innerHTML = ''; // Clear existing
+        crewContainer.textContent = ''; // Clear existing
         crewData.forEach(member => {
             const isUnlocked = currentChapter >= member.chapter;
             const el = document.createElement('div');
             el.className = `crew-icon ${isUnlocked ? 'unlocked' : 'locked'}`;
-            el.innerHTML = `
-                ${member.icon}
-                <div class="crew-tooltip">${member.name} (Ch ${member.chapter})</div>
-            `;
+
+            const iconText = document.createTextNode(member.icon);
+            el.appendChild(iconText);
+
+            const tooltip = document.createElement('div');
+            tooltip.className = 'crew-tooltip';
+            tooltip.textContent = `${member.name} (Ch ${member.chapter})`;
+            el.appendChild(tooltip);
+
             crewContainer.appendChild(el);
         });
 

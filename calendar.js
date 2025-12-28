@@ -91,10 +91,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 dayCell.classList.add('past');
             }
 
-            dayCell.innerHTML = `
-                <div class="day-number">${currentDate.getDate()}</div>
-                <div class="day-chapter">${target}</div>
-            `;
+            const dayNumber = document.createElement('div');
+            dayNumber.className = 'day-number';
+            dayNumber.textContent = currentDate.getDate();
+            dayCell.appendChild(dayNumber);
+
+            const dayChapter = document.createElement('div');
+            dayChapter.className = 'day-chapter';
+            dayChapter.textContent = target;
+            dayCell.appendChild(dayChapter);
 
             gridDiv.appendChild(dayCell);
 
