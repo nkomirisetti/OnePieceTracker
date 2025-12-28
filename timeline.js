@@ -42,11 +42,20 @@ document.addEventListener('DOMContentLoaded', () => {
             // Format Date
             const dateStr = targetDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
 
-            li.innerHTML = `
-                <span class="arc-name">${arc.name}</span>
-                <span class="arc-chapter">Ch. ${targetChapter}</span>
-                <span class="arc-date">${dateStr}</span>
-            `;
+            const arcName = document.createElement('span');
+            arcName.className = 'arc-name';
+            arcName.textContent = arc.name;
+            li.appendChild(arcName);
+
+            const arcChapter = document.createElement('span');
+            arcChapter.className = 'arc-chapter';
+            arcChapter.textContent = `Ch. ${targetChapter}`;
+            li.appendChild(arcChapter);
+
+            const arcDate = document.createElement('span');
+            arcDate.className = 'arc-date';
+            arcDate.textContent = dateStr;
+            li.appendChild(arcDate);
 
             timelineList.appendChild(li);
 
