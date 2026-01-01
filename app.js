@@ -89,6 +89,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const el = document.createElement('div');
             el.className = `crew-icon ${isUnlocked ? 'unlocked' : 'locked'}`;
 
+            // A11y: Make interactive and descriptive
+            el.setAttribute('tabindex', '0');
+            el.setAttribute('role', 'img');
+            el.setAttribute('aria-label', `${member.name} (${isUnlocked ? 'Unlocked' : 'Locked'}) - Chapter ${member.chapter}`);
+
             const iconText = document.createTextNode(member.icon);
             el.appendChild(iconText);
 

@@ -474,8 +474,14 @@ h1 {
     pointer-events: none;
 }
 
-.crew-icon:hover .crew-tooltip {
+.crew-icon:hover .crew-tooltip,
+.crew-icon:focus-visible .crew-tooltip {
     opacity: 1;
+}
+
+.crew-icon:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
 }
 
 .back-link {
