@@ -91,14 +91,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 dayCell.classList.add('past');
             }
 
+            // Accessibility: Descriptive text for screen readers
+            const srText = document.createElement('span');
+            srText.className = 'sr-only';
+            const fullDate = currentDate.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
+            srText.textContent = `${fullDate}: Target Chapter ${target}`;
+            dayCell.appendChild(srText);
+
             const dayNumber = document.createElement('div');
             dayNumber.className = 'day-number';
             dayNumber.textContent = currentDate.getDate();
+            dayNumber.setAttribute('aria-hidden', 'true');
             dayCell.appendChild(dayNumber);
 
             const dayChapter = document.createElement('div');
             dayChapter.className = 'day-chapter';
             dayChapter.textContent = target;
+            dayChapter.setAttribute('aria-hidden', 'true');
             dayCell.appendChild(dayChapter);
 
             gridDiv.appendChild(dayCell);
